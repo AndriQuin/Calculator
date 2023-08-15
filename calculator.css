@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #242424;
+	overflow-x: hidden;
+}
+
+#Calculator {
+	width: 320px;
+	height: 520px;
+	display: flex;
+	flex-flow: column wrap;	
+	box-shadow: 0px 0px 2rem #059ef7;
+	border: 1px solid black;
+	background: white;
+}
+
+#inputs {
+	width: 100%;	
+	height: 15%;
+}
+
+#inputs #inputVal {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, #05c5ff, #f1f1f1 25%);
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+#buttons {
+	height: 80%;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	padding: 28px;
+	margin: 5px;
+	box-shadow: 5px 5px 10px gray;
+	background: transparent;
+	border: none;
+	position: relative;
+	z-index: 1;
+}
+
+button:nth-child(1) div.hovEffect, button:nth-child(2) div.hovEffect,
+button:nth-child(3) div.hovEffect, button:nth-child(4) div.hovEffect, 
+button:nth-child(5) div.hovEffect, button:nth-child(6) div.hovEffect, 
+button:nth-child(7) div.hovEffect, button:nth-child(8) div.hovEffect, 
+button:nth-child(9) div.hovEffect, button:nth-child(10) div.hovEffect,
+button:nth-child(11) div.hovEffect, button:nth-child(12) div.hovEffect,
+button:nth-child(13) div.hovEffect, button:nth-child(14) div.hovEffect,
+button:nth-child(15) div.hovEffect, button:nth-child(16) div.hovEffect {
+	width: 100%;
+	height: 0%;
+	background: linear-gradient(0deg, #05c5ff, white, white);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+/*	border: 1px solid red;*/
+	transition: height 0.3s;
+	z-index: -1;
+}
+
+button:nth-child(1):hover .hovEffect {
+	height: 100%;
+}
+

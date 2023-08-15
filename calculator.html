@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Simple Calculator </title>
+	<link rel="stylesheet" type="text/css" href="Calculator.css">
+	<link rel="icon" href="calculator.png">
+</head>
+
+<body>
+		<!-- Calculator -->
+		<!-- By. Andrie Quinatac-am -->
+		<!-- /Andri Quinn/ -->
+
+	<div id="Calculator">
+		<div id="inputs">
+			<input id="inputVal" value="">
+		</div>	
+
+		<div id="buttons">
+			<div> <button class="operators" onclick="putNum(plus)"> + <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="operators" onclick="putNum(minus)"> - <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="operators" onclick="putNum(multiply)"> x <div class="hovEffect"> </button> </div>
+			<div> <button class="operators" onclick="putNum(divide)"> ÷ <div class="hovEffect">  </div> </button> </div>
+			<div> <button id="erase" onclick="remove()"> &larr; <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num1)"> 1 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num2)"> 2 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num3)"> 3 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num4)"> 4 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num5)"> 5 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num6)"> 6 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num7)"> 7 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num8)"> 8 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num9)"> 9 <div class="hovEffect">  </div> </button> </div>
+			<div> <button class="numbers" onclick="putNum(num0)"> 0 <div class="hovEffect">  </div> </button> </div>
+			<div> <button id="equal" onclick="eval(numeros)"> = <div class="hovEffect">  </div> </button> </div>
+		</div>
+
+	</div>
+<script type="text/javascript" src="Calculator.js"> </script>
+</body>
+</html>
