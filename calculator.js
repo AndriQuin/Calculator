@@ -3,92 +3,36 @@ console.log("-----Calculator-------");
 console.log("By. Andrie Quinatac-an");
 console.log("(Andri Quinn)");
 
-// Input Variable -
+var num0 = document.getElementsByTagName("button")[1].value ="0";
+var num1 = document.getElementsByTagName("button")[5].value = "1";
+var num2 = document.getElementsByTagName("button")[6].value = "2";
+var num3 = document.getElementsByTagName("button")[7].value = "3";
+var num4 = document.getElementsByTagName("button")[9].value = "4";
+var num5 = document.getElementsByTagName("button")[10].value = "5";
+var num6 = document.getElementsByTagName("button")[11].value = "6";
+var num7 = document.getElementsByTagName("button")[13].value = "7";
+var num8 = document.getElementsByTagName("button")[14].value = "8";
+var num9 = document.getElementsByTagName("button")[15].value = "9";
 
-let Calvalue = document.getElementById("inputVal");
+var plus = document.getElementsByTagName("button")[2].value = "+";
+var minus = document.getElementsByTagName("button")[3].value = "-";
+var times = document.getElementsByTagName("button")[8].value= "*";
+var divide = document.getElementsByTagName("button")[12].value = "/";
 
-// Number Buttons Variables -
+var display = document.getElementById("displayNums");
 
-let num1 = document.getElementsByClassName("numbers")[0] = "1";
-let num2 = document.getElementsByClassName("numbers")[1] = "2";
-let num3 = document.getElementsByClassName("numbers")[2] = "3";
-let num4 = document.getElementsByClassName("numbers")[3] = "4";
-let num5 = document.getElementsByClassName("numbers")[4] = "5";
-let num6 = document.getElementsByClassName("numbers")[5] = "6";
-let num7 = document.getElementsByClassName("numbers")[6] = "7";
-let num8 = document.getElementsByClassName("numbers")[7] = "8";
-let num9 = document.getElementsByClassName("numbers")[8] = "9";
-let num0 = document.getElementsByClassName("numbers")[9] = "0";
-
-// Operators Variables - 
-let plus = document.getElementsByClassName("operators")[0] = " + ";
-let minus = document.getElementsByClassName("operators")[1] = " - ";
-let divide= document.getElementsByClassName("operators")[2] = " / ";
-let multiply = document.getElementsByClassName("operators")[3] = " x ";
-
-// Global Variable For Evaluating Purpose -
-
-window.numeros = Calvalue.value;
-
-// Add Input Function -
-
-function putNum(something) {
-	Calvalue.value += something;
-	window.numeros = Calvalue.value;
-	console.log(numeros)
+function pressButton(arg) {
+  display.value += arg;
 }
 
-// Remove Input Function -
-
-function remove() {
-	let val = Calvalue.value.split("");
-	val.pop();
-	Calvalue.value = val.join("");
-	window.numeros = Calvalue.value;
-	console.log(numeros);
+function calculate() {
+  let result = eval(display.value);
+  display.value = result;
 }
 
-function eval(inputval) {
-
-	// Takes the input as an array - 
-	// example inputVal = 1 + 2 turns into [1,+,2] = value
-	let value = inputval.split(" "); 
-
-	// for solving and replacing the elements of the array.
-	let result = 0; 
-	let operators = ["x","/","+","-"], n = 0;
-
-	// PEMDAS Sequence.
-	while (value.length != 1) {
-		for (i of value) {
-
-			if ( (operators[n] == i) && (operators[n] == "x") ) {
-				result = Number(value[value.indexOf(i) - 1]) * Number(value[value.indexOf(i) + 1]);
-				value.splice(value.indexOf(i) - 1, 3, result);
-				result = 0;
-
-			}
-
-			else if ( (operators[n] == i) && (operators[n] == "/") ) {
-				result = Number(value[value.indexOf(i) - 1]) / Number(value[value.indexOf(i) + 1]);
-				value.splice(value.indexOf(i) - 1, 3, result);
-				result = 0;
-			}
-
-			else if ( (operators[n] == i) && (operators[n] == "+") ) {
-				result = Number(value[value.indexOf(i) - 1]) + Number(value[value.indexOf(i) + 1]);
-				value.splice(value.indexOf(i) - 1, 3, result);
-				result = 0;
-			}
-
-			else if ( (operators[n] == i) && (operators[n] == "-") ) {
-				result = Number(value[value.indexOf(i) - 1]) - Number(value[value.indexOf(i) + 1]);
-				value.splice(value.indexOf(i) - 1, 3, result);
-				result = 0;
-			}
-
-		}
-		n += 1;
-	}
-	Calvalue.value = value[0];
+function erase() {
+  let expression = display.value.split("");
+  expression.pop();
+  let newExpression = expression.join("");
+  display.value = newExpression;
 }
