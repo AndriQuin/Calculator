@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> Simple Calculator </title>
-	<link rel="stylesheet" type="text/css" href="calculator.css">
-	<link rel="icon" href="calculator.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Calculator </title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="calculator.css">
+  <link rel="icon" href="calculator.png">
 </head>
 
 <body>
-		<!-- Calculator -->
-		<!-- By. Andrie Quinatac-am -->
-		<!-- /Andri Quinn/ -->
-
-	<div id="Calculator">
-		<div id="inputs">
-			<input id="inputVal" value="">
-		</div>	
-
-		<div id="buttons">
-			<div> <button class="operators" onclick="putNum(plus)"> + <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="operators" onclick="putNum(minus)"> - <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="operators" onclick="putNum(multiply)"> x <div class="hovEffect"> </button> </div>
-			<div> <button class="operators" onclick="putNum(divide)"> ÷ <div class="hovEffect">  </div> </button> </div>
-			<div> <button id="erase" onclick="remove()"> &larr; <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num1)"> 1 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num2)"> 2 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num3)"> 3 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num4)"> 4 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num5)"> 5 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num6)"> 6 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num7)"> 7 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num8)"> 8 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num9)"> 9 <div class="hovEffect">  </div> </button> </div>
-			<div> <button class="numbers" onclick="putNum(num0)"> 0 <div class="hovEffect">  </div> </button> </div>
-			<div> <button id="equal" onclick="eval(numeros)"> = <div class="hovEffect">  </div> </button> </div>
-		</div>
-
-	</div>
-<script type="text/javascript" src="calculator.js"> </script>
+  
+  <div id="calculator">
+    
+    <div id="display">
+      <input id="displayNums" value=""/> 
+    </div>
+    
+    <div id="keyboard">
+      
+      <button onclick="pressButton(num0),clickEffect()"> 0
+      <button onclick="pressButton(plus), clickEffect2()"> +
+      <button onclick="pressButton(minus),clickEffect2()"> -
+      <button onclick="erase(),clickEffect2()"> &larr;
+  
+      <button onclick="pressButton(num1),clickEffect()"> 1 </button>
+      <button onclick="pressButton(num2),clickEffect()"> 2 </button>
+      <button onclick="pressButton(num3),clickEffect()"> 3 </button>
+      <button onclick="pressButton(times),clickEffect2()"> x </button>
+      <button onclick="pressButton(num4),clickEffect()"> 4 </button>
+      <button onclick="pressButton(num5),clickEffect()"> 5 </button>
+      <button onclick="pressButton(num6),clickEffect()"> 6 </button>
+      <button onclick="pressButton(divide),clickEffect2()"> ÷ </button>
+      <button onclick="pressButton(num7),clickEffect()"> 7 </button>
+      <button onclick="pressButton(num8),clickEffect()"> 8 </button>
+      <button onclick="pressButton(num9),clickEffect()"> 9 </button>
+      <button id="equals" onclick="calculate(),clickEffect2()"> = </button>
+    </div>
+  </div>
+  
+  <script src="calculator.js"></script>
 </body>
 </html>
